@@ -29,7 +29,76 @@
 		
 	\end{abstract}
 	
-	\section{}
+	\section*{Introduction to Optimization}
+	Optimization involves finding the best solution from a set of possible solutions. Specifically, it entails finding the value of $x$ that minimizes or maximizes a function $f(x)$.
+	
+	\subsection*{Maximization and Minimization}
+	Maximization of $f(x)$ can be transformed into a minimization problem by considering $-f(x)$. Hence, we focus on minimization:
+	\[
+	\text{maximize } f(x) \equiv \text{minimize } -f(x).
+	\]
+	
+	\subsection*{Continuous vs. Discrete Optimization}
+	\textbf{Continuous Optimization:} The variables can take any value within a given range. Example: Linear regression where parameters can take any real value.
+	
+	\textbf{Discrete Optimization:} The variables can only take on discrete values. Example: Integer programming where solutions are restricted to integers.
+	
+	In this session, we will focus on continuous optimization, as it is predominantly used in data science.
+	
+	\section*{Optimization Algorithms}
+	What algorithms can you think of for solving optimization problems? Here, we discuss some common methods:
+	
+	\subsection*{Grid Search}
+	Grid Search is a brute-force method that evaluates the function at a grid of points covering the domain. It is simple but computationally expensive, especially in high dimensions.
+	
+	\subsection*{Dichotomy (Bisection Method)}
+	The Bisection Method is used for one-dimensional optimization. It repeatedly bisects an interval and selects the subinterval in which the function changes sign. It is effective for finding roots but can be extended to optimization.
+	
+	\subsection*{Gradient Descent}
+	Gradient Descent is an iterative method used for finding local minima of a function. It updates the parameters in the opposite direction of the gradient of the function at the current point. 
+	
+	The update rule is:
+	\[
+	x_{k+1} = x_k - \alpha \nabla f(x_k),
+	\]
+	where $\alpha$ is the learning rate and $\nabla f(x_k)$ is the gradient of $f$ at $x_k$.
+	
+	\section*{Theory and Practice}
+	\subsection*{Grid Search}
+	\begin{itemize}
+		\item \textbf{Step 1:} Define the grid over the domain.
+		\item \textbf{Step 2:} Evaluate the function at each grid point.
+		\item \text{Step 3:} Select the point with the best function value.
+	\end{itemize}
+	\textbf{Advantages:} Simple and straightforward.
+	
+	\textbf{Disadvantages:} Computationally expensive, especially in high dimensions.
+	
+	\subsection*{Bisection Method}
+	\begin{itemize}
+		\item \textbf{Step 1:} Choose initial interval $[a, b]$ such that $f(a)$ and $f(b)$ have opposite signs.
+		\item \textbf{Step 2:} Compute the midpoint $c = \frac{a+b}{2}$.
+		\item \textbf{Step 3:} Determine the subinterval $[a, c]$ or $[c, b]$ where the function changes sign.
+		\item \textbf{Step 4:} Repeat until the interval is sufficiently small.
+	\end{itemize}
+	\textbf{Advantages:} Guaranteed to converge if the function is continuous.
+	
+	\textbf{Disadvantages:} Only applicable to one-dimensional problems.
+	
+	\subsection*{Gradient Descent}
+	\begin{itemize}
+		\item \textbf{Step 1:} Initialize $x_0$.
+		\item \textbf{Step 2:} Compute the gradient $\nabla f(x_k)$.
+		\item \textbf{Step 3:} Update $x_{k+1} = x_k - \alpha \nabla f(x_k)$.
+		\item \textbf{Step 4:} Repeat until convergence (i.e., $\|\nabla f(x_k)\|$ is small).
+	\end{itemize}
+	\textbf{Advantages:} Efficient for high-dimensional problems, widely used in machine learning.
+	
+	\textbf{Disadvantages:} May converge to local minima, requires tuning of the learning rate.
+
+    \section*{Conclusion}
+	Continuous optimization is a crucial tool in data science. Understanding and implementing different optimization algorithms like Grid Search, Bisection Method, and Gradient Descent is essential for effectively solving optimization problems.
+	
 	
 	% what is optimization? finding best x so that f(x) is min/max
 	% max = min*(-1)
