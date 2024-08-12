@@ -30,6 +30,111 @@
 		
 	\end{abstract}
 	
+	
+	\section*{1. First-Order Differential Equations with Integrating Factor (IF)}
+	
+	A first-order differential equation can often be written in the form:
+	\[
+	\frac{dy}{dx} + P(x)y = Q(x)
+	\]
+	To solve this, we use an integrating factor, $\mu(x)$, which is defined as:
+	\[
+	\mu(x) = e^{\int P(x) \, dx}
+	\]
+	Multiplying both sides of the differential equation by $\mu(x)$ gives:
+	\[
+	\mu(x) \frac{dy}{dx} + \mu(x)P(x)y = \mu(x)Q(x)
+	\]
+	The left side of the equation is now the derivative of the product $\mu(x)y$:
+	\[
+	\frac{d}{dx}\left[\mu(x)y\right] = \mu(x)Q(x)
+	\]
+	Integrating both sides with respect to $x$:
+	\[
+	\mu(x)y = \int \mu(x)Q(x) \, dx + C
+	\]
+	Finally, solve for $y(x)$:
+	\[
+	y(x) = \frac{1}{\mu(x)}\left[\int \mu(x)Q(x) \, dx + C\right]
+	\]
+	
+	\section*{2. First-Order Differential Equations with IF and Initial Conditions}
+	
+	Consider the same first-order equation with an initial condition $y(x_0) = y_0$. After finding the general solution as in the previous section:
+	\[
+	y(x) = \frac{1}{\mu(x)}\left[\int \mu(x)Q(x) \, dx + C\right]
+	\]
+	Apply the initial condition to find $C$:
+	\[
+	y(x_0) = \frac{1}{\mu(x_0)}\left[\int_{x_0}^{x_0} \mu(x)Q(x) \, dx + C\right] = y_0
+	\]
+	Since the integral from $x_0$ to $x_0$ is zero:
+	\[
+	y_0 = \frac{C}{\mu(x_0)} \quad \Rightarrow \quad C = y_0 \mu(x_0)
+	\]
+	Thus, the particular solution satisfying the initial condition is:
+	\[
+	y(x) = \frac{1}{\mu(x)}\left[\int_{x_0}^{x} \mu(x)Q(x) \, dx + y_0 \mu(x_0)\right]
+	\]
+	
+	\section*{3. Second-Order Differential Equations with Homogeneous Case ($=0$)}
+	
+	A second-order homogeneous linear differential equation is of the form:
+	\[
+	a\frac{d^2y}{dx^2} + b\frac{dy}{dx} + cy = 0
+	\]
+	The characteristic equation associated with this differential equation is:
+	\[
+	ar^2 + br + c = 0
+	\]
+	The nature of the solutions depends on the discriminant $\Delta = b^2 - 4ac$:
+	\begin{itemize}
+		\item If $\Delta > 0$, the roots $r_1$ and $r_2$ are real and distinct. The solution is:
+		\[
+		y(x) = C_1e^{r_1x} + C_2e^{r_2x}
+		\]
+		\item If $\Delta = 0$, the roots are real and repeated $r_1 = r_2 = r$. The solution is:
+		\[
+		y(x) = (C_1 + C_2x)e^{rx}
+		\]
+		\item If $\Delta < 0$, the roots are complex $r_{1,2} = \alpha \pm i\beta$. The solution is:
+		\[
+		y(x) = e^{\alpha x}(C_1\cos(\beta x) + C_2\sin(\beta x))
+		\]
+	\end{itemize}
+	
+	\section*{4. Second-Order Differential Equations: General Case}
+	
+	For the general second-order linear differential equation:
+	\[
+	a\frac{d^2y}{dx^2} + b\frac{dy}{dx} + cy = g(x)
+	\]
+	The solution is the sum of the complementary function $y_c(x)$ (the solution to the associated homogeneous equation) and a particular solution $y_p(x)$:
+	\[
+	y(x) = y_c(x) + y_p(x)
+	\]
+	The method for finding $y_p(x)$ depends on the form of $g(x)$:
+	\begin{itemize}
+		\item If $g(x)$ is a polynomial, use the method of undetermined coefficients.
+		\item If $g(x)$ is of an exponential or trigonometric form, use an ansatz of a similar form.
+		\item For other forms of $g(x)$, the method of variation of parameters can be used.
+	\end{itemize}
+	
+	\section*{5. Second-Order Differential Equations with Initial Conditions}
+	
+	Given the general solution:
+	\[
+	y(x) = y_c(x) + y_p(x)
+	\]
+	And initial conditions $y(x_0) = y_0$ and $\frac{dy}{dx}\Big|_{x=x_0} = y'_0$, we determine the constants $C_1$ and $C_2$ in $y_c(x)$:
+	\[
+	y(x_0) = y_c(x_0) + y_p(x_0) = y_0
+	\]
+	\[
+	\frac{dy}{dx}\Big|_{x=x_0} = y'_c(x_0) + y'_p(x_0) = y'_0
+	\]
+	Solving these two equations will yield the specific values of $C_1$ and $C_2$ that satisfy the initial conditions, leading to the particular solution for the problem.
+	
 	% basics
 	% 1st order with integrating factor (IF)
 	% 1st order with IF & conditions
