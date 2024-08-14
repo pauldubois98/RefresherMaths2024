@@ -30,134 +30,142 @@
 		
 	\end{abstract}
 	
-	\section{Introduction to Optimization}
-	Optimization is the process of finding the maximum or minimum of a function subject to certain conditions. This session will explore different methods for both unconstrained and constrained optimization, with a particular focus on the Lagrange multiplier technique. 
+	This session will explore different methods for constrained optimization, with a particular focus on the Lagrange multiplier technique.
 	
 	\section{Unconstrained Optimization}
 	
-	Unconstrained optimization refers to the problem of optimizing a function without any restrictions or constraints on the variables. Mathematically, this can be expressed as:
-	
-	\[
+	Unconstrained optimization refers to the problem of optimizing a function without any restrictions or constraints on the variables.
+	Mathematically, this can be expressed as:
+	$$
 	\text{Find } \mathbf{x}^* \text{ such that } f(\mathbf{x}^*) = \min_{\mathbf{x}} f(\mathbf{x})
-	\]
+	$$
+	where $f(\mathbf{x})$ is the objective function.
 	
-	where \( f(\mathbf{x}) \) is the objective function. The necessary condition for \(\mathbf{x}^*\) to be an extremum is that the gradient of \( f \) at \( \mathbf{x}^* \) is zero:
-	
-	\[
+	The necessary condition for \(\mathbf{x}^*\) to be an extremum is that the gradient of $f$ at $\mathbf{x}^*$ is zero:
+	$$
 	\nabla f(\mathbf{x}^*) = \mathbf{0}
-	\]
+	$$
 	
 	\subsection{Direct Calculation Method}
 	The direct method involves taking the derivative of the function with respect to each variable, setting these derivatives equal to zero, and solving the resulting system of equations.
 	
 	\textbf{Example:}
-	
-	Consider the function \( f(x, y) = x^2 + y^2 \). To find the minimum, we calculate:
-	
-	\[
+	\noindent\\
+	Consider the function $f(x, y) = x^2 + y^2$. To find the minimum, we calculate:
+	$$
 	\frac{\partial f}{\partial x} = 2x, \quad \frac{\partial f}{\partial y} = 2y
-	\]
-	
+	$$
 	Setting these equal to zero, we get:
-	
-	\[
+	$$
 	2x = 0 \quad \text{and} \quad 2y = 0
-	\]
+	$$
+	This gives $x = 0$ and $y = 0$, which is the minimum point.
 	
-	This gives \( x = 0 \) and \( y = 0 \), which is the minimum point.
+	\subsection{Iterative Process}
+	In a previous session, we explored iterative process to find the extremum of a function.
+	This is often used when solving $\nabla f(\mathbf{x}^*) = \mathbf{0}$ can not be done in reasonable time.
 	
 	\section{Constrained Optimization}
-	In many practical problems, the optimization process is subject to certain constraints. These constraints can be either equality or inequality constraints.
+	In many practical problems, the optimization process is subject to certain constraints.
+	These constraints can be either equality or inequality constraints.
 	
 	\subsection{Equality Constrained Optimization}
-	Equality constrained optimization problems involve constraints that are equalities. The problem can be expressed as:
-	
-	\[
-	\text{Minimize } f(\mathbf{x}) \quad \text{subject to} \quad g_i(\mathbf{x}) = 0 \quad \text{for } i = 1, \dots, m
-	\]
+	Equality constrained optimization problems can be expressed as:
+	$$
+	\text{Minimize } f(\mathbf{x})
+	\quad
+	\text{subject to}
+	\quad
+	g_i(\mathbf{x}) = 0
+	\quad
+	\text{for } i = 1, \dots, m
+	$$
 	
 	\subsubsection{Direct Calculation Method}
 	For some simple problems, we can solve the constraint explicitly and substitute it back into the objective function to reduce the problem to an unconstrained optimization problem.
 	
 	\textbf{Example:}
-	
-	Minimize \( f(x, y) = x^2 + y^2 \) subject to the constraint \( x + y = 1 \).
-	
-	Solve the constraint for \( y = 1 - x \), and substitute into \( f(x, y) \):
-	
-	\[
+	Minimize $f(x, y) = x^2 + y^2$ subject to the constraint $x + y = 1$.
+	\\
+	Solve the constraint for $y = 1 - x$, and substitute into $f(x, y)$:
+	$$
 	f(x, 1-x) = x^2 + (1-x)^2 = 2x^2 - 2x + 1
-	\]
-	
+	$$
 	Minimize the resulting function by finding the derivative and setting it to zero:
-	
-	\[
+	$$
 	\frac{d}{dx}(2x^2 - 2x + 1) = 4x - 2 = 0
-	\]
-	
-	This gives \( x = \frac{1}{2} \), and hence \( y = \frac{1}{2} \).
+	$$
+	This gives $x = \frac{1}{2}$, and hence $y = \frac{1}{2}$.
 	
 	\subsubsection{Lagrange Multiplier Method}
 	The Lagrange multiplier method introduces an auxiliary variable (the Lagrange multiplier) to incorporate the constraints into the objective function.
 	
 	\textbf{Lagrange Function:}
-	
-	\[
+	$$
 	\mathcal{L}(\mathbf{x}, \lambda) = f(\mathbf{x}) + \sum_{i=1}^m \lambda_i g_i(\mathbf{x})
-	\]
-	
+	$$
 	To find the stationary points, we solve the system:
-	
-	\[
-	\nabla_\mathbf{x} \mathcal{L}(\mathbf{x}, \lambda) = \mathbf{0}, \quad g_i(\mathbf{x}) = 0 \quad \text{for } i = 1, \dots, m
-	\]
+	$$
+	\nabla_\mathbf{x} \mathcal{L}(\mathbf{x}, \lambda) = \mathbf{0}
+	$$
 	
 	\textbf{Example:}
-	
-	Minimize \( f(x, y) = x^2 + y^2 \) subject to \( x + y = 1 \). The Lagrangian is:
-	
-	\[
+	Minimize $f(x, y) = x^2 + y^2$ subject to $x + y = 1$.
+	\\
+	The Lagrangian is:
+	$$
 	\mathcal{L}(x, y, \lambda) = x^2 + y^2 + \lambda (x + y - 1)
-	\]
-	
+	$$
 	Taking partial derivatives:
-	
-	\[
+	$$
 	\frac{\partial \mathcal{L}}{\partial x} = 2x + \lambda = 0, \quad \frac{\partial \mathcal{L}}{\partial y} = 2y + \lambda = 0, \quad \frac{\partial \mathcal{L}}{\partial \lambda} = x + y - 1 = 0
-	\]
-	
-	Solving this system gives \( x = y = \frac{1}{2} \), \( \lambda = -1 \), which matches our previous result.
+	$$
+	Solving this system gives $x = y = \frac{1}{2}$, $\lambda = -1$, which matches our previous result.
 	
 	\subsection{Inequality Constrained Optimization}
-	Inequality constraints involve conditions of the form \( g_i(\mathbf{x}) \leq 0 \). These can be handled using similar methods but with additional considerations for the active and inactive constraints.
+	Equality constrained optimization problems can be expressed as:
+	$$
+	\text{Minimize } f(\mathbf{x})
+	\quad
+	\text{subject to}
+	\quad
+	g_i(\mathbf{x}) \geq 0
+	\quad
+	\text{for } i = 1, \dots, m
+	$$
 	
 	\subsubsection{Direct Method}
-	When the constraint is active (i.e., it holds as an equality), it can be treated similarly to the equality-constrained case. If inactive, it is ignored.
+	When the constraint is active (i.e., it holds as an equality), it can be treated similarly to the equality-constrained case.
+	If inactive, it is ignored.
 	
 	\textbf{Example:}
+	Minimize $f(x, y) = x^2 + y^2$ subject to $x \geq 0$ and $y \geq 0$.
+	\\
+	This can be approached by checking the boundary and interior points. The minimum will be at $(0,0)$ given the non-negative constraints.
 	
-	Minimize \( f(x, y) = x^2 + y^2 \) subject to \( x \geq 0 \) and \( y \geq 0 \).
+	\subsubsection{Lagrange Multiplier Method with Slack Variables}
+	We note that:
+	$$
+	g_i(\mathbf{x}) \geq 0
+	\iff
+	g_i(\mathbf{x}) -s^2 = 0
+	\quad
+	\text{ for some } s \in \R
+	$$
+	Here, $s$ is called a "slack variable".
+	It is then possible to use the Lagrange trick as before.
+	\\
+	The Lagrange multiplier method introduces now multiple auxiliary variables: the Lagrange multiplier and some slack variables to incorporate the inequality constraints into the objective function.
 	
-	This can be approached by checking the boundary and interior points. The minimum will be at \( (0,0) \) given the non-negative constraints.
-	
-	\subsubsection{Lagrange Multiplier Method (Karush-Kuhn-Tucker Conditions)}
-	For inequality constraints, the Lagrange multiplier method is extended using the Karush-Kuhn-Tucker (KKT) conditions. The KKT conditions generalize the method to handle inequalities by introducing slack variables and ensuring the non-negativity of the multipliers.
-	
-	\textbf{KKT Conditions:}
-	
-	\[
-	\mathcal{L}(\mathbf{x}, \lambda, \mu) = f(\mathbf{x}) + \sum_{i=1}^m \lambda_i g_i(\mathbf{x}) + \sum_{j=1}^p \mu_j h_j(\mathbf{x})
-	\]
-	
-	where \( \mu_j \geq 0 \) and \( h_j(\mathbf{x}) \leq 0 \) for the inequality constraints. The optimal solution satisfies:
-	
-	\[
-	\nabla_\mathbf{x} \mathcal{L}(\mathbf{x}, \lambda, \mu) = \mathbf{0}, \quad g_i(\mathbf{x}) = 0, \quad h_j(\mathbf{x}) \leq 0, \quad \mu_j h_j(\mathbf{x}) = 0
-	\]
-	
-	\section{Conclusion}
-	This session introduced the fundamental methods for optimization, both with and without constraints. The Lagrange multiplier technique is a powerful tool, particularly for handling constraints, and extends to a broad range of optimization problems. Further study into the Karush-Kuhn-Tucker conditions can provide deeper insights into inequality-constrained optimization.
-	
+	\textbf{Lagrange Function:}
+	$$
+	\mathcal{L}(\mathbf{x}, \lambda)
+	= f(\mathbf{x}) + \sum_{i=1}^m \lambda_i \left( g_i(\mathbf{x}) - s_i^2 \right)
+	$$
+	To find the stationary points, we solve the system:
+	$$
+	\nabla_\mathbf{x} \mathcal{L}(\mathbf{x}, \lambda) = \mathbf{0}
+	$$
 	
 	% Course: Lagrangian multiplier technique
 	%
