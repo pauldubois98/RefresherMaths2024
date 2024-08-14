@@ -31,6 +31,61 @@
 	\end{abstract}
 	
 	
+	\section{Introduction to Combinatorics}
+	Combinatorics is the branch of mathematics dealing with counting, arrangement, and combination of objects. It provides the foundation for various concepts in probability, statistics, computer science, and more.
+	
+	\section{Combinatorial Counting Principles}
+	
+	\subsection{Choosing $n$ Times: Power $n$}
+	When we choose an item from a set $n$ times with replacement, each choice is independent of the previous ones. If the set has $k$ distinct elements, the total number of ways to make these choices is given by:
+	\[
+	k^n
+	\]
+	This is often referred to as the \textbf{rule of product} or \textbf{multiplication principle}.
+	
+	\textbf{Example:} 
+	Suppose you have a set of 3 elements $\{a, b, c\}$. The number of different sequences of length 4 that can be formed by choosing from this set with replacement is:
+	\[
+	3^4 = 81
+	\]
+	
+	\subsection{Choosing $n$ Different Items: Factorial}
+	When selecting $n$ different items from a set, the number of ways to arrange these $n$ items in order is given by $n!$ (read as "n factorial"), where:
+	\[
+	n! = n \times (n-1) \times \cdots \times 2 \times 1
+	\]
+	
+	\textbf{Example:} 
+	For a set of 5 distinct items $\{a, b, c, d, e\}$, the number of ways to arrange all 5 items is:
+	\[
+	5! = 5 \times 4 \times 3 \times 2 \times 1 = 120
+	\]
+	
+	\subsection{Choosing $k$ from $n$ in Order}
+	When choosing $k$ elements from a set of $n$ elements where the order of selection matters (permutations), the number of possible arrangements is given by:
+	\[
+	P(n, k) = \frac{n!}{(n-k)!}
+	\]
+	
+	\textbf{Example:} 
+	Consider a set of 6 elements $\{a, b, c, d, e, f\}$, and you want to select and arrange 3 elements. The number of different arrangements is:
+	\[
+	P(6, 3) = \frac{6!}{(6-3)!} = \frac{6 \times 5 \times 4 \times 3 \times 2 \times 1}{3 \times 2 \times 1} = 120
+	\]
+	
+	\subsection{Choosing $k$ from $n$ Without Order}
+	When choosing $k$ elements from a set of $n$ elements where the order of selection does not matter (combinations), the number of possible combinations is given by the binomial coefficient:
+	\[
+	\binom{n}{k} = \frac{n!}{k!(n-k)!}
+	\]
+	
+	\textbf{Example:} 
+	Given a set of 7 elements $\{a, b, c, d, e, f, g\}$, the number of ways to choose 3 elements without regard to order is:
+	\[
+	\binom{7}{3} = \frac{7!}{3!(7-3)!} = \frac{7 \times 6 \times 5 \times 4 \times 3 \times 2 \times 1}{(3 \times 2 \times 1)(4 \times 3 \times 2 \times 1)} = 35
+	\]
+
+	
 	% choose n times => power n
 	% choose n different => factorial
 	% choose k from n in order
