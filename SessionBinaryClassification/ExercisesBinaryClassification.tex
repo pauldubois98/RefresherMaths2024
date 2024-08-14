@@ -1,8 +1,9 @@
 \documentclass[]{article}
 
 %opening
-\title{Exercises Set 6}
+\title{Exercises Set: Calculus}
 \author{Paul Dubois}
+\date{}
 
 \usepackage{amsmath}
 \usepackage{amsfonts}
@@ -35,7 +36,7 @@
 	\begin{center}
 		\includegraphics[height=4cm]{Lagrange}
 	\end{center}
-
+	
 	\subsection{Unconstrained optimization}
 	Let $f(x,y) = 2x^2-12x + 4y^2 + 8y + 20$.\\
 	Find $(x^*,y^*) \in \R^2$ such that $f$ reaches its minimum (i.e. $f(x^*,y^*) \leq f(x,y) \quad \forall (x,y) \in \R^2$).
@@ -95,7 +96,9 @@
 	
 	The best line is not only separating the data in two sets, but also maximizing the distance between the line and the points.
 	
+	\noindent \textbf{\textit{TODO:}}
 	Calculate the distance between the line and a point $\mathbf{x} \in \R^2$.
+	% distance: $\frac{\mid \mathbf{w} \cdot \mathbf{x} - b \mid}{\mid \mid \mathbf{w} \mid \mid}$	
 	
 	\vspace{0.5cm}
 	
@@ -106,13 +109,26 @@
 		\item if $y_k = +1$ then $h(\mathbf{x}_k)>0$
 		\item if $y_k = -1$ then $h(\mathbf{x}_k)<0$
 	\end{itemize}
-	Hence, we need $y_k \cdot h(\mathbf{x}_k) > 0 \ \forall k$.
+	\noindent \textbf{\textit{TODO:}}
+	Derive a condition that ensures correct classification if true for all $k$.
+	% need: $y_k \cdot h(\mathbf{x}_k) > 0 \ \forall k$.
 	
-	The margin is defined as the minimal distance between a point of data and the line.
+	\vspace{0.5cm}
 	
+	Assuming the data is linearly separable, we now define 3 regions:
+	\begin{itemize}
+		\item $\mathcal{R}_{-1}$: $\mathbf{x} \in \R^2$ such that $\mathbf{w}.\mathbf{x} - b < -1$
+		\item $\mathcal{R}_{ 0}$: $\mathbf{x} \in \R^2$ such that $\mid \mathbf{w}.\mathbf{x} - b \mid < 1$ \textit{(the "margin band")}
+		\item $\mathcal{R}_{+1}$: $\mathbf{x} \in \R^2$ such that $\mathbf{w}.\mathbf{x} - b > 1$
+	\end{itemize}
+	\noindent \textbf{\textit{TODO:}}
+	Calculate the margin band width.
+	% margin size: $\frac{2}{\mid \mid \mathbf{w} \mid \mid}$
+	
+	\noindent \textbf{\textit{TODO:}}
 	Formulate the constrained optimization problem to find the best (i.e. maximizing the margin) parameters $\mathbf{w}$ and $b$.
-	
-	
+	% problem: $\text{minimize}_{\mathbf{w}, b} \mid \mid \mathbf{w} \mid \mid$
+	% such that $y_k (\mathbf{w}.\mathbf{x}_k - b) \geq -1 \quad \forall k$
 	
 	\subsection{Practice}
 	The training dataset consists of the following data points:
@@ -160,17 +176,17 @@
 		\item (2, 0)
 		\item (-2, 0)
 	\end{itemize}
-	Plot the data points.
+	Plot the data points.\\
+	Observe that there is no line separating the two classes perfectly.
 	
 	\vspace{0.5cm}
 	
-	Then, there is no line separating the two classes perfectly.
 	Let $\phi(x,y) = (x^2 + y^2, x^2-y^2)$.
-	Compute $\phi(x,y)$ for every point, and plot them on a new graph.
-	The two classes should now be separable by a line.
-	
-	\textit{The "kernel trick" allows us to perform an SVM on data transformed by a non-linear function; the details are outside the scope of this course.}
-	
+	Compute $\phi(x,y)$ for every point, and plot them on a new graph.\\
+	Observe that the two classes should now be separable by a line
+	\footnote{
+		The "kernel trick" allows us to perform an SVM on data transformed by a non-linear function; the details are outside the scope of this course.
+	}.
 	
 	
 	
@@ -184,13 +200,10 @@
 			\hline
 			Hours Studied ($X$) & Pass ($Y$) \\
 			\hline
-			3 & 0 \\
-			4 & 0 \\
-			5 & 1 \\
-			6 & 0 \\
-			7 & 1 \\
-			8 & 1 \\
-			9 & 1 \\
+			0 & 0 (no) \\
+			4 & 0 (no) \\
+			3 & 1 (yes) \\
+			8 & 1 (yes) \\
 			\hline
 		\end{tabular}
 	\end{table}
