@@ -177,6 +177,176 @@
 	where $\mathbf{V}$ is the matrix of eigenvectors and $\mathbf{\Lambda}$ is the diagonal matrix of eigenvalues.
 	The principal components are the columns of $\mathbf{V}$ corresponding to the largest eigenvalues.
 	
+	\paragraph{Example: PCA on a 2D Dataset}
+	\noindent\\
+	Suppose we have the following 2D dataset with 3 data points:
+	$$
+	\begin{pmatrix}
+		2 & 3 \\
+		3 & 4 \\
+		4 & 5 \\
+	\end{pmatrix}
+	$$
+	
+	\subparagraph{Center the Data}
+	Mean of the first feature (column):
+	$$
+	\mu_1 = \frac{2 + 3 + 4}{3} = 3
+	$$
+	Mean of the second feature:
+	$$
+	\mu_2 = \frac{3 + 4 + 5}{3} = 4
+	$$
+	Subtract the mean from each feature to center the data, you should obtain:
+	$$
+	\begin{pmatrix}
+		-1 & -1 \\
+		0 & 0 \\
+		1 & 1 \\
+	\end{pmatrix}
+	$$
+	\textit{(We won't do the scaling operation, in order to simplify the calculations.)}
+	
+	\subparagraph{Calculate the Covariance Matrix}
+	\noindent\\
+	The covariance matrix is calculated using the centered \textit{(and re-scaled)} data.
+	$$
+	\text{Cov} = \frac{1}{n-1} \text{(Centered Data)}^\text{T} \times \text{(Centered Data)}
+	$$
+	Here, $m=3$ is the number of data points.
+	
+	$$
+	\text{Cov} = \frac{1}{2} 
+	\begin{pmatrix}
+		-1 & 0 & 1 \\
+		-1 & 0 & 1 \\
+	\end{pmatrix}
+	\times
+	\begin{pmatrix}
+		-1 & -1 \\
+		0 & 0 \\
+		1 & 1 \\
+	\end{pmatrix}
+	=
+	\frac{1}{2}
+	\begin{pmatrix}
+		2 & 2 \\
+		2 & 2 \\
+	\end{pmatrix}
+	=
+	\begin{pmatrix}
+		1 & 1 \\
+		1 & 1 \\
+	\end{pmatrix}
+	$$
+	
+	\subparagraph{Calculate the Eigenvalues and Eigenvectors}
+	\noindent\\
+	To find the eigenvalues \( \lambda \), solve the characteristic equation:
+	$$
+	\text{det}(\text{Cov} - \lambda I) = 0
+	$$
+	$$
+	\text{det}\left(\begin{pmatrix}
+		1 - \lambda & 1 \\
+		1 & 1 - \lambda \\
+	\end{pmatrix}\right) = 0
+	$$
+	$$
+	(1 - \lambda)(1 - \lambda) - 1 = 0
+	$$
+	$$
+	\lambda^2 - 2\lambda = 0
+	$$
+	$$
+	\lambda(\lambda - 2) = 0
+	$$
+	So, the eigenvalues are $\lambda_1 = 0$ and $\lambda_2 = 2$.
+	
+	For \( \lambda_1 = 0 \), solve:
+	$$
+	\begin{pmatrix}
+		1 & 1 \\
+		1 & 1 \\
+	\end{pmatrix}
+	\begin{pmatrix}
+		x_1 \\
+		x_2 \\
+	\end{pmatrix}
+	= 0
+	$$
+	This gives the eigenvector \( v_1 = \begin{pmatrix} 1 \\ -1 \end{pmatrix} \).
+	
+	For \( \lambda_2 = 2 \), solve:
+	$$
+	\begin{pmatrix}
+		1 - 2 & 1 \\
+		1 & 1 - 2 \\
+	\end{pmatrix}
+	\begin{pmatrix}
+		x_1 \\
+		x_2 \\
+	\end{pmatrix}
+	= 0
+	$$
+	This gives the eigenvector \( v_2 = \begin{pmatrix} 1 \\ 1 \end{pmatrix} \).
+	
+	\subparagraph{Project the Data onto the Principal Components}
+	\noindent\\
+	The principal components are the eigenvectors corresponding to the largest eigenvalues.
+	Here, the largest eigenvalue is 2, so the principal component is \( v_2 = \begin{pmatrix} 1 \\ 1 \end{pmatrix} \).
+	To project the data onto this component, just multiply the centered data by \( v_2 \):
+	$$
+	\begin{pmatrix}
+		-1 & -1 \\
+		0 & 0 \\
+		1 & 1 \\
+	\end{pmatrix}
+	\times
+	\begin{pmatrix}
+		1 \\
+		1 \\
+	\end{pmatrix}
+	=
+	\begin{pmatrix}
+		-2 \\
+		0 \\
+		2 \\
+	\end{pmatrix}
+	$$
+	To project the data onto the 2nd component, just multiply the centered data by \( v_1 \):
+	$$
+	\begin{pmatrix}
+		-1 & -1 \\
+		0 & 0 \\
+		1 & 1 \\
+	\end{pmatrix}
+	\times
+	\begin{pmatrix}
+		1 \\
+		-1 \\
+	\end{pmatrix}
+	=
+	\begin{pmatrix}
+		0 \\
+		0 \\
+		0 \\
+	\end{pmatrix}
+	$$
+	
+	Hence, the data becomes:
+	$$
+	\begin{pmatrix}
+		-2 & 0 \\
+		0 & 0 \\
+		2 & 0 \\
+	\end{pmatrix}
+	$$
+	The first component explains $\frac{2}{2+0}*100 = 100$\% of the data, while the second component explains $\frac{0}{2+0}*100 = 0$\% of the data variability
+	\footnote{
+		Those values may change if you don't re-scale the data properly.
+		In this particular example, it does not matter (hence we ignored that step to simplify calculations).
+	}.
 	
 	% sample vs population
 	% mean / std & their etimators
