@@ -101,6 +101,50 @@
 	\qquad \textit{or} \qquad
 	\mathbf{a'} = \mathbf{P}^{-1} \mathbf{a}
 	$$
+	where $P = \begin{pmatrix} \mathbf{b}_1' \mathbf{b}_2' \dots \mathbf{b}_n' \end{pmatrix}$ with $\mathbf{b}_1', \mathbf{b}_2', \dots, \mathbf{b}_n'$ column vectors expressed in the basis $\mathbf{B}$.
+	
+	\paragraph{Example: Change of Basis}
+	\noindent\\
+	Consider a vector $\mathbf{v} = \begin{pmatrix} 3 \\ 2 \end{pmatrix}$ in the standard basis $\mathbf{B} = \left\{ \begin{pmatrix} 1 \\ 0 \end{pmatrix}, \begin{pmatrix} 0 \\ 1 \end{pmatrix} \right\}$.
+	\\
+	Suppose we want to express $\mathbf{v}$ in a new basis $\mathbf{B}' = \left\{ \mathbf{b}_1' = \begin{pmatrix} 1 \\ 1 \end{pmatrix}, \mathbf{b}_2' = \begin{pmatrix} 1 \\ -1 \end{pmatrix} \right\}$.
+	
+	\subparagraph{Approach 1: Solving the linear system}
+	\noindent\\
+	Finding the coordinates of $\mathbf{v}$ in the new basis $\mathbf{B}'$, means expressing $\mathbf{v}$ as a linear combination of $\mathbf{b}_1'$ and $\mathbf{b}_2'$:
+	$$
+	\mathbf{v} = c_1 \mathbf{b}_1' + c_2 \mathbf{b}_2' = c_1 \begin{pmatrix} 1 \\ 1 \end{pmatrix} + c_2 \begin{pmatrix} 1 \\ -1 \end{pmatrix}
+	$$
+	This gives us the system of equations:
+	$$
+	\begin{aligned}
+		c_1 + c_2 &= 3 \\
+		c_1 - c_2 &= 2
+	\end{aligned}
+	$$
+	Solving for $c_1$ and $c_2$:
+	$$
+	c_1 = \frac{3 + 2}{2} = \frac{5}{2}, \quad c_2 = \frac{3 - 2}{2} = \frac{1}{2}
+	$$
+	So, the coordinates of $\mathbf{v}$ in the new basis $\mathbf{B}'$ are:
+	$$
+	\mathbf{v}_{\mathbf{B}'} = \begin{pmatrix} \frac{5}{2} \\ \frac{1}{2} \end{pmatrix}
+	$$
+	
+	\subparagraph{Approach 2: Using the transformation matrix}
+	\noindent\\
+	The transformation matrix $\mathbf{P}$ from the standard basis $\mathbf{B}$ to the new basis $\mathbf{B}'$ is given by:
+	$$
+	\mathbf{P} = \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix}
+	$$
+	and the inverse of $\mathbf{P}$ is:
+	$$
+	\mathbf{P}^{-1} = \frac{1}{2} \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix}
+	$$
+	Thus, the coordinates in the new basis can also be computed as:
+	$$
+	\mathbf{v}_{\mathbf{B}'} = \mathbf{P}^{-1} \mathbf{v} = \frac{1}{2} \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix} \begin{pmatrix} 3 \\ 2 \end{pmatrix} = \begin{pmatrix} \frac{5}{2} \\ \frac{1}{2} \end{pmatrix}
+	$$
 	
 	\section{Principal Component Analysis (PCA) Theory}
 	\textbf{Principal Component Analysis (PCA)} is a technique used to reduce the dimensionality of data while preserving as much variance as possible.
