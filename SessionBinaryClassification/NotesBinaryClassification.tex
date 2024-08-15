@@ -139,9 +139,14 @@
 	If inactive, it is ignored.
 	
 	\textbf{Example:}
+	Minimizing a Quadratic Function with an Inequality Constraint
+	\\
 	Minimize $f(x, y) = x^2 + y^2$ subject to $x \geq 0$ and $y \geq 0$.
 	\\
-	This can be approached by checking the boundary and interior points. The minimum will be at $(0,0)$ given the non-negative constraints.
+	This can be approached by checking the boundary and interior points.
+	The minimum will be at $(0,0)$ given the non-negative constraints.
+	\\
+	Note that if the constraint was $x+y \geq 1$, showing that the minimum is at $(0.5, 0.5)$ is much harder via direct calculations.
 	
 	\subsubsection{Lagrange Multiplier Method with Slack Variables}
 	We note that:
@@ -166,6 +171,66 @@
 	$$
 	\nabla_\mathbf{x} \mathcal{L}(\mathbf{x}, \lambda) = \mathbf{0}
 	$$
+	
+	\textbf{Example:}
+	Minimizing a Quadratic Function with an Inequality Constraint\\
+	Consider the problem of minimizing the function $f(x, y) = x^2 + y^2$ subject to the inequality constraint $x + y \geq 1$.
+	
+	\textbf{Step 1: Introduce the Slack Variable}\\
+	The constraint can be written as:
+	$$
+	x + y - s^2 = 1 \quad \text{with } s \geq 0
+	$$
+	where $s$ is the slack variable.
+	The constraint is now an equality constraint.
+	
+	\textbf{Step 2: Construct the Lagrange Function}\\
+	The Lagrange function incorporating the constraint is:
+	$$
+	\mathcal{L}(x, y, s, \lambda) = x^2 + y^2 + \lambda \left( (x + y) - s^2 - 1 \right)
+	$$
+	where $\lambda$ is the Lagrange multiplier.
+	
+	\textbf{Step 3: Compute the Partial Derivatives}\\
+	To find the stationary points, take the partial derivatives of $\mathcal{L}$ with respect to $x$, $y$, $s$, and $\lambda$, and set them to zero:
+	$$
+	\frac{\partial \mathcal{L}}{\partial x} = 2x + \lambda = 0
+	$$
+	$$
+	\frac{\partial \mathcal{L}}{\partial y} = 2y + \lambda = 0
+	$$
+	$$
+	\frac{\partial \mathcal{L}}{\partial s} = -2\lambda s = 0
+	$$
+	$$
+	\frac{\partial \mathcal{L}}{\partial \lambda} = x + y - s^2 - 1 = 0
+	$$
+	
+	\textbf{Step 4: Solve the System of Equations}\\
+	From $\frac{\partial \mathcal{L}}{\partial x} = 0$ and $\frac{\partial \mathcal{L}}{\partial y} = 0$, we have:
+	$$
+	2x + \lambda = 0 \quad \text{and} \quad 2y + \lambda = 0
+	$$
+	This implies $x = y$.\\
+	From $\frac{\partial \mathcal{L}}{\partial s} = 0$, we have:
+	$$
+	-2\lambda s = 0
+	$$
+	This implies $\lambda = 0$ or $s = 0$. 
+	
+	\begin{enumerate}
+		\item If $\lambda = 0$, then $x = 0$ and $y = 0$, but this would violate the constraint $x + y \geq 1$.
+		Hence, this case is not valid.
+		\item If $s = 0$, the constraint simplifies to $x + y = 1$.
+		Since $x = y$, we have $2x = 1$, so $x = \frac{1}{2}$ and $y = \frac{1}{2}$.
+	\end{enumerate}
+	
+	\textbf{Step 5: Determine the Optimal Point}\\
+	Substitute $x = \frac{1}{2}$, $y = \frac{1}{2}$ into the original function:
+	$$
+	f\left(\frac{1}{2}, \frac{1}{2}\right) = \left(\frac{1}{2}\right)^2 + \left(\frac{1}{2}\right)^2 = \frac{1}{4} + \frac{1}{4} = \frac{1}{2}
+	$$
+	Thus, the minimum value of $f(x, y) = x^2 + y^2$ subject to $x + y \geq 1$ is $\frac{1}{2}$ at the point $\left(\frac{1}{2}, \frac{1}{2}\right)$.
 	
 	% Course: Lagrangian multiplier technique
 	%
