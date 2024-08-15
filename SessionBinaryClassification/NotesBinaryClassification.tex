@@ -111,16 +111,28 @@
 	
 	\textbf{Example:}
 	Minimize $f(x, y) = x^2 + y^2$ subject to $x + y = 1$.
-	\\
+
+	\textbf{Step 1: Construct the Lagrange Function}\\
 	The Lagrangian is:
 	$$
 	\mathcal{L}(x, y, \lambda) = x^2 + y^2 + \lambda (x + y - 1)
 	$$
-	Taking partial derivatives:
+	
+	\textbf{Step 2: Compute the Partial Derivatives}\\
+	The partial derivatives of the Lagrangian are:
 	$$
 	\frac{\partial \mathcal{L}}{\partial x} = 2x + \lambda = 0, \quad \frac{\partial \mathcal{L}}{\partial y} = 2y + \lambda = 0, \quad \frac{\partial \mathcal{L}}{\partial \lambda} = x + y - 1 = 0
 	$$
+	
+	\textbf{Step 3: Solve the System of Equations}\\
 	Solving this system gives $x = y = \frac{1}{2}$, $\lambda = -1$, which matches our previous result.
+	
+	\textbf{Step 4: Determine the Optimal Point}\\
+	Substitute $x = \frac{1}{2}$, $y = \frac{1}{2}$ into the original function:
+	$$
+	f\left(\frac{1}{2}, \frac{1}{2}\right) = \left(\frac{1}{2}\right)^2 + \left(\frac{1}{2}\right)^2 = \frac{1}{4} + \frac{1}{4} = \frac{1}{2}
+	$$
+	Thus, the minimum value of $f(x, y) = x^2 + y^2$ subject to $x + y = 1$ is $\frac{1}{2}$ at the point $\left(\frac{1}{2}, \frac{1}{2}\right)$.
 	
 	\subsection{Inequality Constrained Optimization}
 	Equality constrained optimization problems can be expressed as:
@@ -227,9 +239,7 @@
 	
 	\textbf{Step 5: Determine the Optimal Point}\\
 	Substitute $x = \frac{1}{2}$, $y = \frac{1}{2}$ into the original function:
-	$$
-	f\left(\frac{1}{2}, \frac{1}{2}\right) = \left(\frac{1}{2}\right)^2 + \left(\frac{1}{2}\right)^2 = \frac{1}{4} + \frac{1}{4} = \frac{1}{2}
-	$$
+	$f\left(\frac{1}{2}, \frac{1}{2}\right) = \frac{1}{2}$.
 	Thus, the minimum value of $f(x, y) = x^2 + y^2$ subject to $x + y \geq 1$ is $\frac{1}{2}$ at the point $\left(\frac{1}{2}, \frac{1}{2}\right)$.
 	
 	% Course: Lagrangian multiplier technique
