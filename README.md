@@ -10,3 +10,12 @@ Validating a session can be done either by *coming in person to the session*, or
     - [Notes](https://github.com/pauldubois98/RefresherMaths2024/blob/main/SessionCombinatorics/NotesCombinatorics.pdf)
     - [Problem Set](https://github.com/pauldubois98/RefresherMaths2024/blob/main/SessionCombinatorics/ExercisesCombinatorics.pdf)
     - [Solutions (coming soon)]()
+
+The order of the future sessions is to be determined. Here is the list:
+- Calculus
+- Optimization
+- Linear Algebra
+- Differential Equations (needs calculus)
+- PCA (needs linear algebra)
+- Binary Classification (needs optimization)
+- (TBD) Probability /or/ Unfinished sessions /or/ Subject of student choice?
