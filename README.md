@@ -29,5 +29,8 @@ The order of the future sessions is to be determined. Here is the list:
     - [Problem Set](https://github.com/pauldubois98/RefresherMaths2024/blob/main/SessionDifferentialEquations/ExercisesDifferentialEquations.pdf)
     - [Solutions (coming soon)]()
 - PCA (needs linear algebra)
+    - [Notes](https://github.com/pauldubois98/RefresherMaths2024/blob/main/SessionPCA/NotesPCA.pdf)
+    - [Problem Set](https://github.com/pauldubois98/RefresherMaths2024/blob/main/SessionPCA/ExercisesPCA.pdf)
+    - [Solutions (coming soon)]()
 - Binary Classification (needs optimization)
 - (TBD) Probability /or/ Unfinished sessions /or/ Subject of student choice?
