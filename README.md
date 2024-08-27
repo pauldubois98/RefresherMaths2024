@@ -33,4 +33,7 @@ The order of the future sessions is to be determined. Here is the list:
     - [Problem Set](https://github.com/pauldubois98/RefresherMaths2024/blob/main/SessionPCA/ExercisesPCA.pdf)
     - [Solutions (coming soon)]()
 - Binary Classification (needs optimization)
+    - [Notes](https://github.com/pauldubois98/RefresherMaths2024/blob/main/SessionBinaryClassification/NotesBinaryClassification.pdf)
+    - [Problem Set](https://github.com/pauldubois98/RefresherMaths2024/blob/main/SessionBinaryClassification/ExercisesBinaryClassification.pdf)
+    - [Solutions (coming soon)]()
 - (TBD) Probability /or/ Unfinished sessions /or/ Subject of student choice?
