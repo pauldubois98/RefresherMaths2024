@@ -17,6 +17,9 @@ The order of the future sessions is to be determined. Here is the list:
     - [Problem Set](https://github.com/pauldubois98/RefresherMaths2024/blob/main/SessionCalculus/ExercisesCalculus.pdf)
     - [Solutions (coming soon)]()
 - Optimization
+    - [Notes](https://github.com/pauldubois98/RefresherMaths2024/blob/main/SessionOptimization/NotesOptimization.pdf)
+    - [Problem Set](https://github.com/pauldubois98/RefresherMaths2024/blob/main/SessionOptimization/ExercisesOptimization.pdf)
+    - [Solutions (coming soon)]()
 - Linear Algebra
 - Differential Equations (needs calculus)
 - PCA (needs linear algebra)
