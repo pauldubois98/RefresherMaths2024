@@ -152,8 +152,42 @@
 	\begin{enumerate}
 		\item $(4 + 9) \ (\text{mod} \ 7)$
 		\item $(5 \times 8) \ (\text{mod} \ 11)$
-		\item Show that $2 \mid k^2 \implies 2 \mid k$
+		\item Show that $2 \mid k^2 \implies 2 \mid k$ \textit{(hint: separate cases)}		\item Show that $3 \mid k^2 \implies 3 \mid k$ \textit{(hint: separate cases)}
 	\end{enumerate}
 
+	\vspace{3cm}
+	\section*{Proof by Contradiction}
+	\subsection*{$\sqrt{2}$ is not a rational (i.e.: $\sqrt{2} \not\in \mathbb{Q}$)}
+	
+	We will prove that $\sqrt{2}$ is not a rational number using a proof by contradiction.
+	
+	\begin{proof}
+		Assume, for the sake of contradiction, that $\sqrt{2}$ is rational. Then, we can write $\sqrt{2}$ as a fraction of two integers $\frac{p}{q}$.
+		In case $p$ and $q$ have common divisor $k > 1$, we can divide both by that $k$, untill $p$ and $q$ become coprime.
+		Hence, we can now assume $\sqrt{2} = \frac{p}{q}$, where $p$ and $q$ are coprime (i.e., they have no common factors other than 1), and $q \neq 0$.
+		Hence, we have:
+		$$ \sqrt{2} = \frac{p}{q} $$
+		Squaring both sides gives:
+		$$ 2 = \frac{p^2}{q^2} $$
+		Multiplying both sides by $q^2$ results in:
+		$$ p^2 = 2q^2 $$
+		This implies that $p^2$ is even, and therefore $p$ must also be even (property derived in the modular arithmetic section).
+		So, we can write $p = 2k$ for some integer $k$.
+		
+		Substituting $p = 2k$ into the equation $p^2 = 2q^2$, we get:
+		$$ (2k)^2 = 2q^2 $$
+		so $$ 4k^2 = 2q^2 $$
+		Dividing both sides by 2 yields:
+		$$ 2k^2 = q^2 $$
+		This implies that $q^2$ is even, and therefore $q$ must also be even.
+		
+		However, if both $p$ and $q$ are even, then $p$ and $q$ have a common factor of 2, which contradicts our initial assumption that $p$ and $q$ are coprime.
+		
+		Since our assumption that $\sqrt{2}$ is rational leads to a contradiction, we conclude that $\sqrt{2}$ is not rational.
+		Therefore, $\sqrt{2} \not\in \mathbb{Q}$.
+	\end{proof}
+	
+	\subparagraph{Exercises}
+	Show, using the same technique that $\sqrt{3} \not\in \mathbb{Q}$.
 	
 \end{document}
