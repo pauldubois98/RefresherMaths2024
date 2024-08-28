@@ -100,4 +100,60 @@
 	\textbf{{\LARGE Extra: Fundamental Mathematics}}
 	This part was improvised, as we went through the planned lecture (much) faster than expected.
 	
+	\section*{Modular Arithmetic}
+	\noindent \\
+	\textbf{Definition}: Modular arithmetic involves integers where numbers reset to zero after reaching a specified modulus.
+	\noindent \\
+	\textbf{Real-world Example}: The 12-hour clock system is a common example, where after 12, the next hour is 1.
+	\noindent \\
+	\textbf{Notation}: $a \equiv b \ (\text{mod} \ m)$
+	This means that when $a$ is divided by $m$, it leaves a remainder $b$.
+
+	
+	\subparagraph{Basic Concepts}
+	\noindent \\
+	\textbf{Modulus (m)}: The value at which numbers wrap around.
+	\noindent \\
+	\textbf{Congruence Relation}: $a \equiv b \ (\text{mod} \ m)$ means $a - b$ is divisible by $m$.
+	\noindent \\
+	\textbf{Examples}:
+	\begin{itemize}
+		\item $17 \equiv 5 \ (\text{mod} \ 12)$ because $17 - 5 = 12$, which is divisible by 12.
+		\item $20 \equiv 2 \ (\text{mod} \ 9)$ because $20 - 2 = 18$, which is divisible by 9.
+	\end{itemize}
+
+	\subparagraph{Exercises}
+	Calculate the following:
+	\begin{enumerate}
+		\item $25 \ (\text{mod} \ 7)$
+		\item $37 \ (\text{mod} \ 10)$
+		\item $100 \ (\text{mod} \ 13)$
+	\end{enumerate}
+	
+	\subparagraph{Basic Properties}
+	\noindent \\
+	\textbf{Addition}: If $a \equiv b \ (\text{mod} \ m)$ and $c \equiv d \ (\text{mod} \ m)$, then $(a + c) \equiv (b + d) \ (\text{mod} \ m)$.
+	\noindent \\
+	\textbf{Subtraction}: $(a - c) \equiv (b - d) \ (\text{mod} \ m)$.
+	\noindent \\
+	\textbf{Multiplication}: $(a \times c) \equiv (b \times d) \ (\text{mod} \ m)$.
+	
+	\subparagraph{Link with divisibility}
+	\noindent \\
+	Modular arithmetic is closely related to the concept of divisibility.
+	Specifically, the congruence $a \equiv b \ (\text{mod} \ m)$ implies that the difference $a - b$ is divisible by $m$.
+	In other words, there exists an integer $k$ such that $a - b = km$.
+	This relationship shows that modular arithmetic can be used to test for divisibility.
+	For example, a number $a$ is divisible by $m$ if and only if $a \equiv 0 \ (\text{mod} \ m)$.
+	Thus, modular arithmetic provides a powerful tool for solving problems related to divisibility and for simplifying complex calculations by working with remainders.
+	
+	\subparagraph{Exercises}
+	Simplify the following:
+	\begin{enumerate}
+		\item $(4 + 9) \ (\text{mod} \ 7)$
+		\item $(5 \times 8) \ (\text{mod} \ 11)$
+		\item Show that $2 \mid k^2 \implies 2 \mid k$
+	\end{enumerate}
+
+	
 \end{document}
