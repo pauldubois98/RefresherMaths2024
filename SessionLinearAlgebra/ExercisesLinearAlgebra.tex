@@ -158,7 +158,6 @@
 	$$
 	Determine which of the vectors $\mathbf{u}$, $\mathbf{v}$, and $\mathbf{w}$ are orthogonal to each other.
 	
-	
 	\paragraph{Gram-Schmidt Orthogonalization}
 	(*) Given the vectors
 	$$
@@ -180,6 +179,17 @@
 	$$
 	Apply the Gram-Schmidt orthogonalization process to find an orthonormal basis for the subspace spanned by these vectors.\\
 	Verify that the resulting vectors are indeed orthogonal and normalized (by computing their norm and pairwise dot product).
+	
+	\section{Norms}
+	Given two vectors $\mathbf{v} = \begin{pmatrix} 1 \\ -2 \\ 3 \end{pmatrix}$ and $\mathbf{w} = \begin{pmatrix} -1 \\ 4 \\ -2 \end{pmatrix}$ in $\mathbb{R}^3$, verify the following properties:
+	Verify that $\|\mathbf{v} + \mathbf{w}\|_1 \leq \|\mathbf{v}\|_1 + \|\mathbf{w}\|_1$ (Triangle Inequality for $L_1$ norm).
+	
+	Suppose $\mathbf{v}$ represents the error vector $\mathbf{v} = \begin{pmatrix} -0.1 \\ 0.05 \\ 0.2 \end{pmatrix}$ in a model prediction.
+	\begin{enumerate}
+		\item Compute the $L_1$ norm of $\mathbf{v}$ to measure the total error.
+		\item Compute the $L_2$ norm of $\mathbf{v}$ to measure the Euclidean distance of the error.
+		\item Explain the difference in interpretation between the $L_1$ and $L_2$ norms in the context of error measurement.
+	\end{enumerate}
 	
 	
 \end{document}
