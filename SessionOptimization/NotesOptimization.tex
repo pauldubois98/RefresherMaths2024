@@ -116,5 +116,82 @@
 	It's a good exercise to test various optimization techniques, and you are encourage to try other ones on you own (genetic algorithms are interesting as well, although only used in niche cases).
 	In practice, gradient descent (and variations of it, such as Adam) are used in the vast majority of the cases.
 	
+	\section*{Linear Regression}
+	This section will look at $1$D-$1$D linear regression so that formulas maintain a manageable weight.
+	The same principle can be applied to $N$D-$1$D linear regressions, and repeating the process for each output dimension, it is possible to extend it to $N$D-$M$D cases.
+	
+	Given a set of data points $(x_k, y_k) \in \mathbb{R}^2$ for $1 \leq k \leq N$, we want to find the line $y = ax + b$ that best fits the data.
+	The function $y = f(x)$ is a linear model with parameters $a$ and $b$, where $a$ represents the slope and $b$ represents the intercept.
+	
+	\subsection*{Least Squares Method}
+	To define the "best fit" for a line, we use the sum of errors squared.
+	The idea is to minimize the sum of the squared differences between the observed values $y_k$ and the predicted values $f(x_k)$.
+	This sum will be our cost function (or loss):
+	$$
+	\mathcal{L}(a, b) = \sum_{k=1}^{N} \left( y_k - (ax_k + b) \right)^2
+	$$
+	Our objective is to minimize $\mathcal{L}(a, b)$ with respect to $a$ and $b$.
+	
+	\subsection*{Derivation of $a$ and $b$}
+	To minimize $\mathcal{L}(a, b)$, we calculate the partial derivatives of $\mathcal{L}$ with respect to $a$ and $b$.
+	
+	First, the partial derivative of $\mathcal{L}$ with respect to $a$ is:
+	$$
+	\frac{\partial \mathcal{L}(a, b)}{\partial a} = \frac{\partial}{\partial a} \sum_{k=1}^{N} \left( y_k - (ax_k + b) \right)^2
+	$$
+	$$
+	= \sum_{k=1}^{N} \frac{\partial}{\partial a} \left( y_k - ax_k - b \right)^2
+	$$
+	$$
+	= \sum_{k=1}^{N} 2 \left( y_k - ax_k - b \right) (-x_k)
+	$$
+	$$
+	= -2 \sum_{k=1}^{N} x_k \left( y_k - ax_k - b \right)
+	$$
+	
+	$\mathcal{L}(a, b)$ is minimum if $\frac{\partial \mathcal{L}(a, b)}{\partial a} = 0$, so we want:
+	$$
+	\sum_{k=1}^{N} x_k y_k - a \sum_{k=1}^{N} x_k^2 - b \sum_{k=1}^{N} x_k = 0
+	$$
+	
+	Next, the partial derivative of $\mathcal{L}(a, b)$ with respect to $b$ is:
+	$$
+	\frac{\partial \mathcal{L}(a, b)}{\partial b} = \frac{\partial}{\partial b} \sum_{k=1}^{N} \left( y_k - (ax_k + b) \right)^2
+	$$
+	$$
+	= \sum_{k=1}^{N} \frac{\partial}{\partial b} \left( y_k - ax_k - b \right)^2
+	$$
+	$$
+	= \sum_{k=1}^{N} 2 \left( y_k - ax_k - b \right) (-1)
+	$$
+	$$
+	= -2 \sum_{k=1}^{N} \left( y_k - ax_k - b \right)
+	$$
+	
+	Setting $\frac{\partial \mathcal{L}(a, b)}{\partial b} = 0$:
+	$$
+	\sum_{k=1}^{N} y_k - a \sum_{k=1}^{N} x_k - N b = 0
+	$$
+	
+	\subsection*{Solving the System of Equations}
+	We now have a system of two linear equations to solve for $a$ and $b$:
+	$$
+	\sum_{k=1}^{N} x_k y_k = a \sum_{k=1}^{N} x_k^2 + b \sum_{k=1}^{N} x_k
+	$$
+	$$
+	\sum_{k=1}^{N} y_k = a \sum_{k=1}^{N} x_k + N b
+	$$
+	
+	\vspace{1cm}
+	\textit{[Details left to the reader]}
+	\vspace{1cm}
+	
+	Setting $\bar{x} = \frac{1}{N} \sum_{k=1}^{N} x_k$ and $\bar{y} = \frac{1}{N} \sum_{k=1}^{N} y_k$ (i.e. the means of the $x$ and $y$ values, respectively):	
+	$$
+	a = \frac{\left( \sum_{k=1}^{N} x_ky_k \right) - N\bar{x}\bar{y}}{\sum_{k=1}^{N} x_k(x_k - \bar{x})}
+	$$
+	$$
+	b = \bar{y} - a \bar{x}
+	$$
 	
 \end{document}
