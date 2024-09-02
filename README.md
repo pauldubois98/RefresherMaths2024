@@ -13,7 +13,7 @@ Validating a session can be done either by *coming in person to the session*, or
 - Session 2 (29th of August 2024): Calculus
     - [Notes](https://github.com/pauldubois98/RefresherMaths2024/blob/main/SessionCalculus/NotesCalculus.pdf)
     - [Problem Set](https://github.com/pauldubois98/RefresherMaths2024/blob/main/SessionCalculus/ExercisesCalculus.pdf)
-    - [Solutions (coming soon)]()
+    - [Solutions](https://github.com/pauldubois98/RefresherMaths2024/blob/main/SessionCalculus/ExercisesCalculus-Solutions.pdf)
 - Session 3 (30th of August 2024): Optimization
     - [Notes](https://github.com/pauldubois98/RefresherMaths2024/blob/main/SessionOptimization/NotesOptimization.pdf)
     - [Problem Set](https://github.com/pauldubois98/RefresherMaths2024/blob/main/SessionOptimization/ExercisesOptimization.pdf)
