@@ -18,6 +18,7 @@ Validating a session can be done either by *coming in person to the session*, or
     - [Notes](https://github.com/pauldubois98/RefresherMaths2024/blob/main/SessionOptimization/NotesOptimization.pdf)
     - [Problem Set](https://github.com/pauldubois98/RefresherMaths2024/blob/main/SessionOptimization/ExercisesOptimization.pdf)
     - [Solutions](https://github.com/pauldubois98/RefresherMaths2024/blob/main/SessionOptimization/NotebookSolutions.pdf)
+    - [Notebook](https://github.com/pauldubois98/RefresherMaths2024/blob/main/SessionOptimization/NotebookSolutions.ipynb)
 
 The order of the future sessions is to be determined. Here is the list:
 - Linear Algebra
