@@ -9,7 +9,7 @@ Validating a session can be done either by *coming in person to the session*, or
 - Session 1 (27th of August 2024): Combinaotrics
     - [Notes](https://github.com/pauldubois98/RefresherMaths2024/blob/main/SessionCombinatorics/NotesCombinatorics.pdf)
     - [Problem Set](https://github.com/pauldubois98/RefresherMaths2024/blob/main/SessionCombinatorics/ExercisesCombinatorics.pdf)
-    - [Solutions (coming soon)]()
+    - [Solutions](https://github.com/pauldubois98/RefresherMaths2024/blob/main/SessionCombinatorics/ExercisesCombinatorics-Solutions.pdf)
 - Session 2 (29th of August 2024): Calculus
     - [Notes](https://github.com/pauldubois98/RefresherMaths2024/blob/main/SessionCalculus/NotesCalculus.pdf)
     - [Problem Set](https://github.com/pauldubois98/RefresherMaths2024/blob/main/SessionCalculus/ExercisesCalculus.pdf)
