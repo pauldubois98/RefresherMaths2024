@@ -6,7 +6,7 @@ Sources for the refresher maths course taught at the ESSEC buisness school septe
 In order to pass the course, you need to validate each session.
 Validating a session can be done either by *coming in person to the session*, or by successfully *solving all compulsory questions* from the corresponding problem set.
 
-- Session 1 (27th of August 2024): Combinaotrics
+- Session 1 (27th of August 2024): Combinatorics
     - [Notes](https://github.com/pauldubois98/RefresherMaths2024/blob/main/SessionCombinatorics/NotesCombinatorics.pdf)
     - [Problem Set](https://github.com/pauldubois98/RefresherMaths2024/blob/main/SessionCombinatorics/ExercisesCombinatorics.pdf)
     - [Solutions](https://github.com/pauldubois98/RefresherMaths2024/blob/main/SessionCombinatorics/ExercisesCombinatorics-Solutions.pdf)
@@ -29,7 +29,7 @@ The order of the future sessions is to be determined. Here is the list:
     - [Notes](https://github.com/pauldubois98/RefresherMaths2024/blob/main/SessionDifferentialEquations/NotesDifferentialEquations.pdf)
     - [Problem Set](https://github.com/pauldubois98/RefresherMaths2024/blob/main/SessionDifferentialEquations/ExercisesDifferentialEquations.pdf)
     - [Solutions (coming soon)]()
-- PCA (needs linear algebra)
+- Principal Components Analysis (needs linear algebra)
     - [Notes](https://github.com/pauldubois98/RefresherMaths2024/blob/main/SessionPCA/NotesPCA.pdf)
     - [Problem Set](https://github.com/pauldubois98/RefresherMaths2024/blob/main/SessionPCA/ExercisesPCA.pdf)
     - [Solutions (coming soon)]()
