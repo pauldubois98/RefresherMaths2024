@@ -370,4 +370,48 @@
 	\end{enumerate}
 	
 	
+	
+	\section{The Gram-Schmidt Algorithm}	
+	We assume the following:
+	\begin{itemize}
+		\item The vectors $\{ \mathbf{v}_1, \mathbf{v}_2, \dots, \mathbf{v}_n \}$ are linearly independent in an inner product space $V$.
+		\item The space $V$ is equipped with an inner product $\langle \mathbf{u}, \mathbf{v} \rangle$ which is usually the standard dot product in $\mathbb{R}^n$.
+	\end{itemize}
+	
+	Given a set of linearly independent vectors $\mathbf{v}_1, \mathbf{v}_2, \dots, \mathbf{v}_n$, the goal is to find an orthogonal set of vectors $\mathbf{u}_1, \mathbf{u}_2, \dots, \mathbf{u}_n$ such that:
+	\begin{itemize}
+		\item $\text{span}(\mathbf{v}_1, \dots, \mathbf{v}_k) = \text{span}(\mathbf{u}_1, \dots, \mathbf{u}_k)$ for all $k$,
+		\item $\langle \mathbf{u}_i, \mathbf{u}_j \rangle = 0$ for all $i \neq j$ (orthogonality),
+		\item Optionally, we can normalize the vectors so that $\|\mathbf{u}_i\| = 1$, forming an orthonormal set.
+	\end{itemize}
+	Let $\mathbf{v}_1, \mathbf{v}_2, \dots, \mathbf{v}_n$ be a set of linearly independent vectors.
+	The Gram-Schmidt process proceeds as follows:
+	
+	\paragraph{Step 1: Construct the first orthogonal vector}
+	\noindent\\
+	We begin by setting the first vector in the orthogonal set equal to the first vector in the original set:
+	$$ \mathbf{u}_1 = \mathbf{v}_1 $$
+	At this point, $\mathbf{u}_1$ is trivially orthogonal because it's the only vector in the set.
+	
+	\paragraph{Step 2: Orthogonalize the remaining vectors}
+	\noindent\\
+	For each subsequent vector $\mathbf{v}_k$ (where $k = 2, 3, \dots, n$), we subtract off the projections onto the previously calculated orthogonal vectors $\mathbf{u}_1, \dots, \mathbf{u}_{k-1}$.
+	
+	The orthogonal vector $\mathbf{u}_k$ is computed as:
+	$$
+	\mathbf{u}_k = \mathbf{v}_k - \sum_{j=1}^{k-1} \frac{\langle \mathbf{v}_k, \mathbf{u}_j \rangle}{\langle \mathbf{u}_j, \mathbf{u}_j \rangle} \mathbf{u}_j
+	$$
+	
+	This formula ensures that $\mathbf{u}_k$ is orthogonal to each of the previous vectors $\mathbf{u}_1, \dots, \mathbf{u}_{k-1}$.
+	
+	\paragraph{Step 3: Normalize (Optional)}
+	\noindent\\
+	If we want an orthonormal set of vectors, we normalize each $\mathbf{u}_k$ by dividing it by its magnitude:
+	$$
+	\mathbf{e}_k = \frac{\mathbf{u}_k}{\|\mathbf{u}_k\|}
+	$$
+	The vectors $\mathbf{e}_1, \dots, \mathbf{e}_n$ now form an orthonormal basis for the same subspace.
+	
+	
+	
 \end{document}
