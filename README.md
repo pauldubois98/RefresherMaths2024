@@ -19,12 +19,12 @@ Validating a session can be done either by *coming in person to the session*, or
     - [Problem Set](https://github.com/pauldubois98/RefresherMaths2024/blob/main/SessionOptimization/ExercisesOptimization.pdf)
     - [Solutions](https://github.com/pauldubois98/RefresherMaths2024/blob/main/SessionOptimization/NotebookSolutions.pdf)
     - [Notebook](https://github.com/pauldubois98/RefresherMaths2024/blob/main/SessionOptimization/NotebookSolutions.ipynb)
-
-The order of the future sessions is to be determined. Here is the list:
-- Linear Algebra
+- Session 4 & 5 (11th of September 2024): Linear Algebra
     - [Notes](https://github.com/pauldubois98/RefresherMaths2024/blob/main/SessionLinearAlgebra/NotesLinearAlgebra.pdf)
     - [Problem Set](https://github.com/pauldubois98/RefresherMaths2024/blob/main/SessionLinearAlgebra/ExercisesLinearAlgebra.pdf)
     - [Solutions (coming soon)]()
+
+Future sessions:
 - Principal Components Analysis (needs linear algebra)
     - [Notes](https://github.com/pauldubois98/RefresherMaths2024/blob/main/SessionPCA/NotesPCA.pdf)
     - [Problem Set](https://github.com/pauldubois98/RefresherMaths2024/blob/main/SessionPCA/ExercisesPCA.pdf)
@@ -37,4 +37,4 @@ The order of the future sessions is to be determined. Here is the list:
     - [Notes](https://github.com/pauldubois98/RefresherMaths2024/blob/main/SessionDifferentialEquations/NotesDifferentialEquations.pdf)
     - [Problem Set](https://github.com/pauldubois98/RefresherMaths2024/blob/main/SessionDifferentialEquations/ExercisesDifferentialEquations.pdf)
     - [Solutions (coming soon)]()
-- (TBD) Probability /or/ Unfinished sessions /or/ Subject of student choice?
+- Probability /or/ Unfinished sessions /or/ Subject of student choice?
