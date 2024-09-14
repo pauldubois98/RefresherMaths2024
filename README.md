@@ -35,4 +35,3 @@ Validating a session can be done either by *coming in person to the session*, or
     - [Notes](https://github.com/pauldubois98/RefresherMaths2024/blob/main/SessionDifferentialEquations/NotesDifferentialEquations.pdf)
     - [Problem Set](https://github.com/pauldubois98/RefresherMaths2024/blob/main/SessionDifferentialEquations/ExercisesDifferentialEquations.pdf)
     - [Solutions (coming soon)]()
-- Probability /or/ Unfinished sessions /or/ Subject of student choice?
