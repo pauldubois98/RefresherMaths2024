@@ -22,7 +22,7 @@ Validating a session can be done either by *coming in person to the session*, or
 - Session 4 & 5 (11th of September 2024): Linear Algebra
     - [Notes](https://github.com/pauldubois98/RefresherMaths2024/blob/main/SessionLinearAlgebra/NotesLinearAlgebra.pdf)
     - [Problem Set](https://github.com/pauldubois98/RefresherMaths2024/blob/main/SessionLinearAlgebra/ExercisesLinearAlgebra.pdf)
-    - [Solutions (coming soon)]()
+    - [Solutions (coming soon)](https://github.com/pauldubois98/RefresherMaths2024/blob/main/SessionLinearAlgebra/ExercisesLinearAlgebra-Solutions.pdf)
 
 Future sessions:
 - Principal Components Analysis (needs linear algebra)
