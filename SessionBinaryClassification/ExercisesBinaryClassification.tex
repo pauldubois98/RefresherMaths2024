@@ -87,55 +87,55 @@
 	\end{center}
 	
 	\subsection{Theory}
-	Define a line in $\R^2$ with parameters $\mathbf{w} = \begin{pmatrix} w_1 \\ w_2 \end{pmatrix}$ and $b$
+	Define a line in $\R^2$ with parameters $\vecw = \begin{pmatrix} w_1 \\ w_2 \end{pmatrix}$ and $b$
 	\footnote{
 		Here, $\mathbf{w} = \begin{pmatrix} w_1 \\ w_2 \end{pmatrix}$, $\mathbf{x} = \begin{pmatrix} x \\ y \end{pmatrix}$, and $b$ is a scalar. We use this notation because it makes it very easy to extend the technique to higher dimensions. For example, you can just add one components to use a plane to separate points in $\mathbb{R}^3$
 		}
-	defined by $\mathbf{w}.\mathbf{x} = b$ (or $\mathbf{w}.\mathbf{x} - b = 0$) for $\mathbf{x} = \begin{pmatrix} x \\ y \end{pmatrix} \in \R^2$.
+	defined by $\vecw.\vecx = b$ (or $\vecw.\vecx - b = 0$) for $\vecx = \begin{pmatrix} x \\ y \end{pmatrix} \in \R^2$.
 	This line cut the plane in 2 regions:
 	\begin{itemize}
-		\item $\mathcal{R}_{-1}$: $\mathbf{x} \in \R^2$ such that $\mathbf{w}.\mathbf{x} - b < 0$
-		\item $\mathcal{R}_{+1}$: $\mathbf{x} \in \R^2$ such that $\mathbf{w}.\mathbf{x} - b > 0$
+		\item $\mathcal{R}_{-1}$: $\vecx \in \R^2$ such that $\vecw.\vecx - b < 0$
+		\item $\mathcal{R}_{+1}$: $\vecx \in \R^2$ such that $\vecw.\vecx - b > 0$
 	\end{itemize}
-	The goal is to find $\mathbf{w}$ and $b$ such that all points of the first class are in the first region, and all points of the second class are in the second region.
+	The goal is to find $\vecw$ and $b$ such that all points of the first class are in the first region, and all points of the second class are in the second region.
 	
-	Let our data be $\{ (\mathbf{x}_k, y_k) \}_{k=1}^N$ where $\mathbf{x}_k$ is the coordinate of the point in $\R^2$ and $y_k$ is the label ($+1$ or $-1$).
+	Let our data be $\{ (\vecxk, y_k) \}_{k=1}^N$ where $\vecxk$ is the coordinate of the point in $\R^2$ and $y_k$ is the label ($+1$ or $-1$).
 	
 	The best line is not only separating the data in two sets, but also maximizing the distance between the line and the points.
 	
 	\noindent \textbf{\textit{TODO:}}
-	Calculate the distance between the line and a point $\mathbf{x} \in \R^2$.
-	% distance: $\frac{\mid \mathbf{w} \cdot \mathbf{x} - b \mid}{\mid \mid \mathbf{w} \mid \mid}$	
+	Calculate the distance between the line and a point $\vecx \in \R^2$.
+	% distance: $\frac{\mid \vecw \cdot \vecx - b \mid}{\mid \mid \vecw \mid \mid}$	
 	
 	\vspace{0.5cm}
 	
-	Let $h(\mathbf{x}) = \mathbf{w}^T\cdot\mathbf{x} - b$.
-	We will predict first class $-1$ if $h(\mathbf{x})<0$ (as this means $\mathbf{x} \in \mathcal{R}_{-1}$); and second class $+1$ if $h(\mathbf{x})>0$ (as this means $\mathbf{x} \in \mathcal{R}_{+1}$).
+	Let $h(\vecx) = \vecw^T \cdot \vecx - b$.
+	We will predict first class $-1$ if $h(\vecx)<0$ (as this means $\vecx \in \mathcal{R}_{-1}$); and second class $+1$ if $h(\vecx)>0$ (as this means $\vecx \in \mathcal{R}_{+1}$).
 	To have each item of data classified correctly, we need:
 	\begin{itemize}
-		\item if $y_k = +1$ then $h(\mathbf{x}_k)>0$
-		\item if $y_k = -1$ then $h(\mathbf{x}_k)<0$
+		\item if $y_k = +1$ then $h(\vecxk)>0$
+		\item if $y_k = -1$ then $h(\vecxk)<0$
 	\end{itemize}
 	\noindent \textbf{\textit{TODO:}}
 	Derive a condition that ensures correct classification if true for all $k$.
-	% need: $y_k \cdot h(\mathbf{x}_k) > 0 \ \forall k$.
+	% need: $y_k \cdot h(\vecxk) > 0 \ \forall k$.
 	
 	\vspace{0.5cm}
 	
 	Assuming the data is linearly separable, we now define 3 regions:
 	\begin{itemize}
-		\item $\mathcal{R}_{-1}$: $\mathbf{x} \in \R^2$ such that $\mathbf{w}.\mathbf{x} - b < -1$
-		\item $\mathcal{R}_{ 0}$: $\mathbf{x} \in \R^2$ such that $\mid \mathbf{w}.\mathbf{x} - b \mid < 1$ \textit{(the "margin band")}
-		\item $\mathcal{R}_{+1}$: $\mathbf{x} \in \R^2$ such that $\mathbf{w}.\mathbf{x} - b > 1$
+		\item $\mathcal{R}_{-1}$: $\vecx \in \R^2$ such that $\vecw.\vecx - b < -1$
+		\item $\mathcal{R}_{ 0}$: $\vecx \in \R^2$ such that $\mid \vecw.\vecx - b \mid < 1$ \textit{(the "margin band")}
+		\item $\mathcal{R}_{+1}$: $\vecx \in \R^2$ such that $\vecw.\vecx - b > 1$
 	\end{itemize}
 	\noindent \textbf{\textit{TODO:}}
 	Calculate the margin band width.
-	% margin size: $\frac{2}{\mid \mid \mathbf{w} \mid \mid}$
+	% margin size: $\frac{2}{\mid \mid \vecw \mid \mid}$
 	
 	\noindent \textbf{\textit{TODO:}}
-	Formulate the constrained optimization problem to find the best (i.e. maximizing the margin) parameters $\mathbf{w}$ and $b$.
-	% problem: $\text{minimize}_{\mathbf{w}, b} \mid \mid \mathbf{w} \mid \mid$
-	% such that $y_k (\mathbf{w}.\mathbf{x}_k - b) \geq -1 \quad \forall k$
+	Formulate the constrained optimization problem to find the best (i.e. maximizing the margin) parameters $\vecw$ and $b$.
+	% problem: $\text{minimize}_{\vecxw, b} \mid \mid \vecw \mid \mid$
+	% such that $y_k (\vecw.\vecxk - b) \geq -1 \quad \forall k$
 	
 	\subsection{Practice}
 	The training dataset consists of the following data points:
@@ -153,15 +153,15 @@
 	
 	\begin{enumerate}
 		\item Plot the points in a 2D graph.
-		\item Using the graph, find the optimal $\mathbf{w}$.
+		\item Using the graph, find the optimal $\vecw$.
 		\item Calculate the optimal value of \(b\) to separate the data points while maximizing the margin.
-		\item Determine the equation of the optimal hyperplane in the form \(\mathbf{w}\cdot\mathbf{x} + b = 0\).
+		\item Determine the equation of the optimal hyperplane in the form \(\vecw \cdot \vecx + b = 0\).
 		\item Identify the support vectors in the dataset.
 		\item Calculate the margin, which is the perpendicular distance from the hyperplane to the nearest support vector.
 		\item Classify a new data point, \((3, 2)\), based on the learned SVM model.
 	\end{enumerate}
 	\textit{Remarks:}\\
-	Here, we have made educated guesses to find $\mathbf{w}$ and $b$; in practice, we need to solve the constrained optimization problem stated above.\\
+	Here, we have made educated guesses to find $\vecw$ and $b$; in practice, we need to solve the constrained optimization problem stated above.\\
 	This can be done using Lagrange multiplier, the details are outside the scope of this course.\\
 	In practice, we let computers solve the problem for us.
 	
