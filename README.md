@@ -37,4 +37,4 @@ Validating a session can be done either by *coming in person to the session*, or
 - Session 8 (21st of September 2024): Differential Equations
     - [Notes](https://github.com/pauldubois98/RefresherMaths2024/blob/main/SessionDifferentialEquations/NotesDifferentialEquations.pdf)
     - [Problem Set](https://github.com/pauldubois98/RefresherMaths2024/blob/main/SessionDifferentialEquations/ExercisesDifferentialEquations.pdf)
-    - [Solutions (coming soon)]()
+    - [Solutions](https://github.com/pauldubois98/RefresherMaths2024/blob/main/SessionDifferentialEquations/ExercisesDifferentialEquations-Solutions.pdf)
