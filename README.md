@@ -26,7 +26,7 @@ Validating a session can be done either by *coming in person to the session*, or
 - Session 6 (13th of September 2024): Principal Components Analysis
     - [Notes](https://github.com/pauldubois98/RefresherMaths2024/blob/main/SessionPCA/NotesPCA.pdf)
     - [Problem Set](https://github.com/pauldubois98/RefresherMaths2024/blob/main/SessionPCA/ExercisesPCA.pdf)
-    - [Solutions (coming soon)]()
+    - [Solutions](https://github.com/pauldubois98/RefresherMaths2024/blob/main/SessionPCA/ExercisesPCA-Solutions.pdf)
     - [Notebook](https://github.com/pauldubois98/RefresherMaths2024/blob/main/SessionPCA/NotebookPCA.ipynb)
     - [Notebook Solutions](https://github.com/pauldubois98/RefresherMaths2024/blob/main/SessionPCA/NotebookPCA_solutions.ipynb)
     - [Notebook Solutions PDF](https://github.com/pauldubois98/RefresherMaths2024/blob/main/SessionPCA/NotebookPCA_solutions.pdf)
