@@ -84,7 +84,11 @@
 	\end{center}
 	
 	\subsection{Theory}
-	Define a line in $\R^2$ with parameters $\mathbf{w}$ and $b$ defined by $\mathbf{w}.\mathbf{x} = b$ (or $\mathbf{w}.\mathbf{x} - b = 0$) for $\mathbf{x} \in \R^2$.
+	Define a line in $\R^2$ with parameters $\mathbf{w} = \begin{pmatrix} w_1 \\ w_2 \end{pmatrix}$ and $b$
+	\footnote{
+		Here, $\mathbf{w} = \begin{pmatrix} w_1 \\ w_2 \end{pmatrix}$, $\mathbf{x} = \begin{pmatrix} x \\ y \end{pmatrix}$, and $b$ is a scalar. We use this notation because it makes it very easy to extend the technique to higher dimensions. For example, you can just add one components to use a plane to separate points in $\mathbb{R}^3$
+		}
+	defined by $\mathbf{w}.\mathbf{x} = b$ (or $\mathbf{w}.\mathbf{x} - b = 0$) for $\mathbf{x} = \begin{pmatrix} x \\ y \end{pmatrix} \in \R^2$.
 	This line cut the plane in 2 regions:
 	\begin{itemize}
 		\item $\mathcal{R}_{-1}$: $\mathbf{x} \in \R^2$ such that $\mathbf{w}.\mathbf{x} - b < 0$
@@ -102,8 +106,8 @@
 	
 	\vspace{0.5cm}
 	
-	Let $h(x) = \mathbf{w}^T\cdot\mathbf{x} - b$.
-	We will predict first class $-1$ if $h(x)<0$ (as this means $x \in \mathcal{R}_{-1}$); and second class $+1$ if $h(x)>0$ (as this means $x \in \mathcal{R}_{+1}$).
+	Let $h(\mathbf{x}) = \mathbf{w}^T\cdot\mathbf{x} - b$.
+	We will predict first class $-1$ if $h(\mathbf{x})<0$ (as this means $\mathbf{x} \in \mathcal{R}_{-1}$); and second class $+1$ if $h(\mathbf{x})>0$ (as this means $\mathbf{x} \in \mathcal{R}_{+1}$).
 	To have each item of data classified correctly, we need:
 	\begin{itemize}
 		\item if $y_k = +1$ then $h(\mathbf{x}_k)>0$
